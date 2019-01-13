@@ -54,9 +54,7 @@ class AddressForm extends React.PureComponent {
           htmlFor="buildingUnit"
         >
           <span>Building Unit</span>
-          <span className="font-weight-lighter text-black-50">
-            Optional
-          </span>{" "}
+          <span className="font-weight-lighter text-black-50">Optional</span>
         </label>
         <input
           id="buildingUnit"

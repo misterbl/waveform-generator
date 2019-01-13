@@ -32,12 +32,7 @@ export class Activity extends React.Component {
         <Formik
           validationSchema={Yup.object().shape({
             activityName: Yup.string().required("Activity name requiered"),
-            activityWebpage: Yup.string().required(
-              "Activity webpage requiered"
-            ),
-            activityPhoneNumber: Yup.string().required(
-              "Activity phone number requiered"
-            )
+            activityWebpage: Yup.string().required("Activity webpage requiered")
           })}
           initialValues={{
             activityName: activityData ? activityData.activityName : "",

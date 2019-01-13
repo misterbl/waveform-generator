@@ -13,6 +13,7 @@ import {
 } from "../selectors/apiSelectors";
 import { saveActivityAddress } from "../actions/actionCreators/apiActions";
 import ROUTES from "../const/route";
+import hoopLogo from "../hoop-logo.png";
 
 export class Address extends React.Component {
   activityAddress = JSON.parse(localStorage.getItem("activityAddress"));
@@ -105,6 +106,8 @@ export class Address extends React.Component {
             </button>
             {addresses && (
               <div className="mt-5">
+                <img src={hoopLogo} alt="Hoop's logo" className="w-25 mb-5" />
+
                 <select
                   onChange={this.onAddressSelect}
                   name="selectAddress"

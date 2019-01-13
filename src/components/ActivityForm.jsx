@@ -1,6 +1,19 @@
 import React from "react";
 
 class ActivityForm extends React.PureComponent {
+  createOptions = () => {
+    let options = [];
+
+    for (let i = 1; i < 12; i++) {
+      const value = i > 1 ? `${i} years` : `${i} year`;
+      options.push(
+        <option key="value" value={value}>
+          {value}
+        </option>
+      );
+    }
+    return options;
+  };
   onActivityNameChange = event => {
     const { setFieldValue } = this.props;
     setFieldValue("activityName", event.target.value);
@@ -79,17 +92,7 @@ class ActivityForm extends React.PureComponent {
             id="minRecommendedAge"
           >
             <option selected>No Min. Age</option>
-            <option value="1 year">1 year</option>
-            <option value="2 years">2 years</option>
-            <option value="3 years">3 years</option>
-            <option value="4 years">4 years</option>
-            <option value="5 years">5 years</option>
-            <option value="6 years">6 years</option>
-            <option value="7 years">7 years</option>
-            <option value="8 years">8 years</option>
-            <option value="9 years">9 years</option>
-            <option value="10 years">10 years</option>
-            <option value="11 years">11 years</option>
+            {this.createOptions()}
           </select>
           <select
             onChange={this.onMaxRecommendedAgeChange}
@@ -98,21 +101,11 @@ class ActivityForm extends React.PureComponent {
             name="maxRcommendedAge"
           >
             <option selected>No Max. Age</option>
-            <option value="1 year">1 year</option>
-            <option value="2 years">2 years</option>
-            <option value="3 years">3 years</option>
-            <option value="4 years">4 years</option>
-            <option value="5 years">5 years</option>
-            <option value="6 years">6 years</option>
-            <option value="7 years">7 years</option>
-            <option value="8 years">8 years</option>
-            <option value="9 years">9 years</option>
-            <option value="10 years">10 years</option>
-            <option value="11 years">11 years</option>
+            {this.createOptions()}
           </select>
         </div>
         <label className="font-weight-bold m-0" htmlFor="activityWebpage">
-          Activity yWebpage
+          Activity Webpage
         </label>
         <p className="text-secondary mb-1">
           Use a specific page if possible. Try to avoid homepage links.
@@ -135,8 +128,12 @@ class ActivityForm extends React.PureComponent {
             {errors.activityWebpage}
           </span>
         )}
-        <label className="font-weight-bold" htmlFor="activityPhoneNumber">
-          Activity Phone Number
+        <label
+          className="font-weight-bold d-flex justify-content-between"
+          htmlFor="activityPhoneNumber"
+        >
+          <span> Activity Phone Number</span>
+          <span className="font-weight-lighter text-black-50">Optional</span>
         </label>
         <input
           id="activityPhoneNumber"
@@ -162,17 +159,10 @@ class ActivityForm extends React.PureComponent {
             id="next-button"
             className="btn next-button ml-3"
             disabled={
-              values.activityName === "" ||
-              values.activityWebpage === "" ||
-              values.activityPhoneNumber === ""
+              values.activityName === "" || values.activityWebpage === ""
             }
           >
             Next
-            {/* {isInFlight ? (
-              <Loading size="small" colour="purple" />
-            ) : (
-              <Trans i18nKey="global|button|createyourteam" />
-            )} */}
           </button>
           <button
             type="button"
