@@ -26,7 +26,7 @@ class AddressForm extends React.PureComponent {
     setFieldValue("town", event.target.value);
   };
 
-  onPostCodeChange = event => {
+  onPostcodeChange = event => {
     const { setFieldValue } = this.props;
     setFieldValue("postcode", event.target.value);
   };
@@ -49,8 +49,14 @@ class AddressForm extends React.PureComponent {
     const postcodeError = Boolean(touched.streetNumber && errors.streetNumber);
     return (
       <form onSubmit={handleSubmit} className="form-group mb-0">
-        <label className="font-weight-bold" htmlFor="buildingUnit">
-          Building Unit
+        <label
+          className="font-weight-bold d-flex justify-content-between"
+          htmlFor="buildingUnit"
+        >
+          <span>Building Unit</span>
+          <span className="font-weight-lighter text-black-50">
+            Optional
+          </span>{" "}
         </label>
         <input
           id="buildingUnit"
@@ -60,8 +66,12 @@ class AddressForm extends React.PureComponent {
           value={values.buildingUnit}
           onChange={this.onBuildingUnitChange}
         />
-        <label className="font-weight-bold m-0" htmlFor="buildingName">
-          Building Name
+        <label
+          className="font-weight-bold m-0 d-flex justify-content-between"
+          htmlFor="buildingName"
+        >
+          <span>Building Name</span>
+          <span className="font-weight-lighter text-black-50">Optional</span>
         </label>
         <input
           id="buildingName"

@@ -4,9 +4,13 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import Modal from "react-modal";
 import * as Yup from "yup";
+import { ClipLoader } from "react-spinners";
 import * as apiThunk from "../actions/thunks/apiThunk";
 import AddressForm from "../components/AddressForm";
-import { getRegisteredAddresses } from "../selectors/apiSelectors";
+import {
+  getRegisteredAddresses,
+  fetchingAddresses
+} from "../selectors/apiSelectors";
 import { saveActivityAddress } from "../actions/actionCreators/apiActions";
 import ROUTES from "../const/route";
 
@@ -25,6 +29,7 @@ export class Address extends React.Component {
         ? this.activityAddress.streetNumber
         : "",
       streetName: this.activityAddress ? this.activityAddress.streetName : "",
+      postcode: this.activityAddress ? this.activityAddress.postcode : "",
       town: this.activityAddress ? this.activityAddress.town : ""
     }
   };
@@ -38,7 +43,6 @@ export class Address extends React.Component {
   };
 
   handleSubmit = async data => {
-    console.log(data);
     const {
       saveActivityAddress,
       history: { push }
@@ -65,7 +69,7 @@ export class Address extends React.Component {
   };
 
   render() {
-    const { addresses } = this.props;
+    const { addresses, fetchingAddresses } = this.props;
     const { selectedAddress } = this.state;
     return (
       <main className="bg-white form-container px-5 pb-5 pt-4">
@@ -79,7 +83,16 @@ export class Address extends React.Component {
             className="btn copy-activity-button ml-3"
             onClick={this.onClick}
           >
-            Copy from Existing Activity
+            {fetchingAddresses ? (
+              <ClipLoader
+                sizeUnit={"px"}
+                size={30}
+                color={"#123abc"}
+                loading={true}
+              />
+            ) : (
+              "Copy from Existing Activity"
+            )}
           </button>
           <Modal
             appElement={document.getElementById("root")}
@@ -142,7 +155,8 @@ export class Address extends React.Component {
 }
 
 export const mapStateToProps = state => ({
-  addresses: getRegisteredAddresses(state)
+  addresses: getRegisteredAddresses(state),
+  fetchingAddresses: fetchingAddresses(state)
 });
 
 export const mapDispatchToProps = {

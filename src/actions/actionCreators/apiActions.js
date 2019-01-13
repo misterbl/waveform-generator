@@ -14,3 +14,8 @@ export const saveActivityAddress = makeActionCreator(
   "SAVE_ACTIVITY_ADDRESS",
   "activityAddress"
 );
+
+export const fetchingAddresses = makeActionCreator(
+  "FETCHING_ADDRESSES",
+  "fectchingAddresses"
+);

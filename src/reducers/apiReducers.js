@@ -1,6 +1,12 @@
 export const activity = (
   state = null,
-  { type, registeredAddresses, activityData, activityAddress }
+  {
+    type,
+    registeredAddresses,
+    activityData,
+    activityAddress,
+    fectchingAddresses
+  }
 ) => {
   switch (type) {
     case "SAVE_REGISTERED_ADDRESSES":
@@ -17,6 +23,11 @@ export const activity = (
       return {
         ...state,
         activityAddress
+      };
+    case "FETCHING_ADDRESSES":
+      return {
+        ...state,
+        fectchingAddresses
       };
     default:
       return state;

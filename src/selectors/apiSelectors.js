@@ -11,3 +11,8 @@ export const getRegisteredAddresses = createSelector(
   activitySelector,
   activity => activity && activity.registeredAddresses
 );
+
+export const fetchingAddresses = createSelector(
+  activitySelector,
+  activity => activity && activity.fectchingAddresses
+);

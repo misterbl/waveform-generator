@@ -4,6 +4,8 @@ import ROUTES from "../const/route";
 
 export class Home extends React.Component {
   onClick = () => {
+    localStorage.removeItem("activityAddress");
+    localStorage.removeItem("activityData");
     this.props.history.push(ROUTES.ACTIVITY);
   };
 
