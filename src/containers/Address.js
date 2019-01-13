@@ -9,17 +9,23 @@ import AddressForm from "../components/AddressForm";
 import { getRegisteredAddresses } from "../selectors/apiSelectors";
 import { saveActivityAddress } from "../actions/actionCreators/apiActions";
 import ROUTES from "../const/route";
-import ExistingAddressForm from "../components/ExistingAddressForm";
 
 export class Address extends React.Component {
+  activityAddress = JSON.parse(localStorage.getItem("activityAddress"));
   state = {
     modalIsOpen: false,
     selectedAddress: {
-      buildingUnit: "",
-      buildingName: "",
-      streetNumber: "",
-      streetName: "",
-      town: ""
+      buildingUnit: this.activityAddress
+        ? this.activityAddress.buildingUnit
+        : "",
+      buildingName: this.activityAddress
+        ? this.activityAddress.buildingName
+        : "",
+      streetNumber: this.activityAddress
+        ? this.activityAddress.streetNumber
+        : "",
+      streetName: this.activityAddress ? this.activityAddress.streetName : "",
+      town: this.activityAddress ? this.activityAddress.town : ""
     }
   };
 
@@ -31,12 +37,14 @@ export class Address extends React.Component {
     this.setState({ modalIsOpen: false });
   };
 
-  handleSubmit = data => {
+  handleSubmit = async data => {
+    console.log(data);
     const {
       saveActivityAddress,
       history: { push }
     } = this.props;
-    saveActivityAddress(data);
+    await localStorage.setItem("activityAddress", JSON.stringify(data));
+    await saveActivityAddress(data);
     push(ROUTES.CONFIRMATION);
   };
 
@@ -51,7 +59,7 @@ export class Address extends React.Component {
 
   onAddressSelect = event => {
     this.setState({
-      selectedAddress: this.props.addresses[Number(event.selectAddress)],
+      selectedAddress: this.props.addresses[Number(event.target.value)],
       modalIsOpen: false
     });
   };
@@ -62,7 +70,7 @@ export class Address extends React.Component {
     return (
       <main className="bg-white form-container px-5 pb-5 pt-4">
         <div className="d-flex justify-content-center">
-          <h1 className="text-center title-30 ml-5 mb-5 w-100 pt4">
+          <h1 className="text-center font-30 ml-5 mb-5 w-100 pt4">
             Add the address
           </h1>
           <button
@@ -82,21 +90,21 @@ export class Address extends React.Component {
             <button className="close-modal-button " onClick={this.closeModal}>
               X
             </button>
-            {addresses && <div>Hello</div>}
             {addresses && (
               <div className="mt-5">
-                <Formik
-                  initialValues={{
-                    selectAddress: ""
-                  }}
-                  onSubmit={this.onAddressSelect}
-                  render={formikProps => (
-                    <ExistingAddressForm
-                      {...formikProps}
-                      addresses={addresses}
-                    />
-                  )}
-                />
+                <select
+                  onChange={this.onAddressSelect}
+                  name="selectAddress"
+                  className="custom-select"
+                  id="selectAddress"
+                >
+                  <option selected>Select an existing address></option>
+                  {addresses.map((addresse, index) => (
+                    <option key={addresse.streetName} value={index}>
+                      {addresse.streetName}
+                    </option>
+                  ))}
+                </select>
               </div>
             )}
           </Modal>
@@ -110,14 +118,17 @@ export class Address extends React.Component {
             postcode: Yup.string().required("Postcode requiered")
           })}
           initialValues={{
-            buildingUnit: selectedAddress.buildingUnit,
-            buildingName: selectedAddress.buildingName,
-            streetNumber: selectedAddress.streetNumber,
-            streetName: selectedAddress.streetName,
-            town: selectedAddress.town,
-            postcode: selectedAddress.postcode
+            buildingUnit: selectedAddress.buildingUnit || "",
+            buildingName: selectedAddress.buildingName || "",
+            streetNumber: selectedAddress.streetNumber || "",
+            streetName: selectedAddress.streetName || "",
+            town: selectedAddress.town || "",
+            postcode: selectedAddress.postcode || ""
           }}
-          onSubmit={this.handleSubmit}
+          onSubmit={data => {
+            this.handleSubmit(data);
+            console.log("hello");
+          }}
           render={formikProps => (
             <AddressForm
               {...formikProps}

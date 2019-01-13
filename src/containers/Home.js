@@ -10,7 +10,7 @@ export class Home extends React.Component {
   render() {
     return (
       <main className="mt-5 p-5 text-center">
-        <h1 className="title-30 text-center mb-5">
+        <h1 className="font-30 text-center mb-5">
           To register a new activity, click Next
         </h1>
         <button

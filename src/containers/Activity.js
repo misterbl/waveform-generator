@@ -8,37 +8,49 @@ import ActivityForm from "../components/ActivityForm";
 import ROUTES from "../const/route";
 
 export class Activity extends React.Component {
-  handleSubmit = data => {
+  state = {
+    activityData: JSON.parse(localStorage.getItem("activityData"))
+  };
+  handleSubmit = async data => {
     const {
       saveActivityData,
       history: { push }
     } = this.props;
+    await localStorage.setItem("activityData", JSON.stringify(data));
+    await saveActivityData(data);
     push(ROUTES.ADDRESS);
-    saveActivityData(data);
   };
-
   backToPreviousPage = () => {
     this.props.history.push(ROUTES.INDEX);
   };
 
   render() {
+    const { activityData } = this.state;
     return (
       <main className="bg-white form-container p-5">
-        <h1 className="title-30 text-center mb-5">About your activity</h1>
+        <h1 className="font-30 text-center mb-5">About your activity</h1>
         <Formik
           validationSchema={Yup.object().shape({
             activityName: Yup.string().required("Activity name requiered"),
-            activitWebpage: Yup.string().required("Activity webpage requiered"),
+            activityWebpage: Yup.string().required(
+              "Activity webpage requiered"
+            ),
             activityPhoneNumber: Yup.string().required(
               "Activity phone number requiered"
             )
           })}
           initialValues={{
-            activityName: "",
-            minRecommendedAge: "No Min. Age",
-            maxecommendedAge: "No Max. Age",
-            activitWebpage: "",
-            activityPhoneNumber: ""
+            activityName: activityData ? activityData.activityName : "",
+            minRecommendedAge: activityData
+              ? activityData.minRecommendedAge
+              : "No Min. Age",
+            maxRecommendedAge: activityData
+              ? activityData.maxRecommendedAge
+              : "No Max. Age",
+            activitWebpage: activityData ? activityData.activitWebpage : "",
+            activityPhoneNumber: activityData
+              ? activityData.activityPhoneNumber
+              : ""
           }}
           onSubmit={this.handleSubmit}
           render={formikProps => (

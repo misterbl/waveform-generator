@@ -10,7 +10,6 @@ export const getAddresses = () => async dispatch => {
     }
     const json = await response.text();
     const data = JSON.parse(json);
-    console.log(data);
     dispatch(saveRegisteredAddresses(data));
   } catch (error) {
     throw new Error("couldn't get addresses");

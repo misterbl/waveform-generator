@@ -6,6 +6,7 @@ import ROUTES from "./const/route";
 import Activity from "./containers/Activity";
 import Address from "./containers/Address";
 import { Home } from "./containers/Home";
+import Confirmation from "./containers/Confirmation";
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
           <Route exact path={ROUTES.INDEX} component={Home} />
           <Route path={ROUTES.ACTIVITY} component={Activity} />
           <Route path={ROUTES.ADDRESS} component={Address} />
+          <Route path={ROUTES.CONFIRMATION} component={Confirmation} />
         </Switch>
       </div>
     );

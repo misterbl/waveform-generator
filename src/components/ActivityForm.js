@@ -6,14 +6,24 @@ class ActivityForm extends React.PureComponent {
     setFieldValue("activityName", event.target.value);
   };
 
-  onActivitWebpageChange = event => {
+  onActivityWebpageChange = event => {
     const { setFieldValue } = this.props;
-    setFieldValue("activitWebpage", event.target.value);
+    setFieldValue("activityWebpage", event.target.value);
   };
 
   onActivityPhoneNumberChange = event => {
     const { setFieldValue } = this.props;
     setFieldValue("activityPhoneNumber", event.target.value);
+  };
+
+  onMinRecommendedAgeChange = event => {
+    const { setFieldValue } = this.props;
+    setFieldValue("minRecommendedAge", event.target.value);
+  };
+
+  onMaxRecommendedAgeChange = event => {
+    const { setFieldValue } = this.props;
+    setFieldValue("maxRecommendedAge", event.target.value);
   };
 
   render() {
@@ -28,8 +38,8 @@ class ActivityForm extends React.PureComponent {
       touched.activityName && errors.activityName
     );
 
-    const activitWebpageError = Boolean(
-      touched.activitWebpage && errors.activitWebpage
+    const activityWebpageError = Boolean(
+      touched.activityWebpage && errors.activityWebpage
     );
 
     const activityPhoneNumberError = Boolean(
@@ -63,64 +73,66 @@ class ActivityForm extends React.PureComponent {
         </label>
         <div className="d-flex mb-4" id="recommendedAge">
           <select
+            onChange={this.onMinRecommendedAgeChange}
             name="minRecommendedAge"
             className="custom-select mr-3"
             id="minRecommendedAge"
           >
             <option selected>No Min. Age</option>
-            <option value="1">1 year</option>
-            <option value="2">2 years</option>
-            <option value="3">3 years</option>
-            <option value="2">4 years</option>
-            <option value="3">5 years</option>
-            <option value="2">6 years</option>
-            <option value="3">7 years</option>
-            <option value="2">8 years</option>
-            <option value="3">9 years</option>
-            <option value="2">10 years</option>
-            <option value="3">11 years</option>
+            <option value="1 year">1 year</option>
+            <option value="2 years">2 years</option>
+            <option value="3 years">3 years</option>
+            <option value="4 years">4 years</option>
+            <option value="5 years">5 years</option>
+            <option value="6 years">6 years</option>
+            <option value="7 years">7 years</option>
+            <option value="8 years">8 years</option>
+            <option value="9 years">9 years</option>
+            <option value="10 years">10 years</option>
+            <option value="11 years">11 years</option>
           </select>
           <select
+            onChange={this.onMaxRecommendedAgeChange}
             className="custom-select"
             id="maxRcommendedAge"
             name="maxRcommendedAge"
           >
             <option selected>No Max. Age</option>
-            <option value="1">1 year</option>
-            <option value="2">2 years</option>
-            <option value="3">3 years</option>
-            <option value="2">4 years</option>
-            <option value="3">5 years</option>
-            <option value="2">6 years</option>
-            <option value="3">7 years</option>
-            <option value="2">8 years</option>
-            <option value="3">9 years</option>
-            <option value="2">10 years</option>
-            <option value="3">11 years</option>
+            <option value="1 year">1 year</option>
+            <option value="2 years">2 years</option>
+            <option value="3 years">3 years</option>
+            <option value="4 years">4 years</option>
+            <option value="5 years">5 years</option>
+            <option value="6 years">6 years</option>
+            <option value="7 years">7 years</option>
+            <option value="8 years">8 years</option>
+            <option value="9 years">9 years</option>
+            <option value="10 years">10 years</option>
+            <option value="11 years">11 years</option>
           </select>
         </div>
-        <label className="font-weight-bold m-0" htmlFor="activitWebpage">
-          Activity Webpage
+        <label className="font-weight-bold m-0" htmlFor="activityWebpage">
+          Activity yWebpage
         </label>
         <p className="text-secondary mb-1">
           Use a specific page if possible. Try to avoid homepage links.
         </p>
         <input
-          id="activitWebpage"
-          className={`form-control ${activitWebpageError ? "" : "mb-4"}`}
+          id="activityWebpage"
+          className={`form-control ${activityWebpageError ? "" : "mb-4"}`}
           type="text"
-          name="activitWebpage"
-          value={values.activitWebpage}
-          onChange={this.onActivitWebpageChange}
-          aria-invalid={activitWebpageError}
+          name="activityWebpage"
+          value={values.activityWebpage}
+          onChange={this.onActivityWebpageChange}
+          aria-invalid={activityWebpageError}
         />
-        {activitWebpageError && (
+        {activityWebpageError && (
           <span
-            id="errors-activitWebpage"
+            id="errors-activityWebpage"
             className="text-danger mt-1 d-block mb-4"
             role="alert"
           >
-            {errors.activitWebpage}
+            {errors.activityWebpage}
           </span>
         )}
         <label className="font-weight-bold" htmlFor="activityPhoneNumber">
@@ -151,7 +163,7 @@ class ActivityForm extends React.PureComponent {
             className="btn next-button ml-3"
             disabled={
               values.activityName === "" ||
-              values.activitWebpage === "" ||
+              values.activityWebpage === "" ||
               values.activityPhoneNumber === ""
             }
           >
