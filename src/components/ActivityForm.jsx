@@ -7,7 +7,7 @@ class ActivityForm extends React.PureComponent {
     for (let i = 1; i < 12; i++) {
       const value = i > 1 ? `${i} years` : `${i} year`;
       options.push(
-        <option key="value" value={value}>
+        <option key={value} value={value}>
           {value}
         </option>
       );
@@ -40,24 +40,12 @@ class ActivityForm extends React.PureComponent {
   };
 
   render() {
-    const {
-      values,
-      handleSubmit,
-      touched,
-      errors,
-      backToPreviousPage
-    } = this.props;
-    const activityNameError = Boolean(
-      touched.activityName && errors.activityName
-    );
+    const { values, handleSubmit, errors, backToPreviousPage } = this.props;
+    const activityNameError = Boolean(errors.activityName);
 
-    const activityWebpageError = Boolean(
-      touched.activityWebpage && errors.activityWebpage
-    );
+    const activityWebpageError = Boolean(errors.activityWebpage);
 
-    const activityPhoneNumberError = Boolean(
-      touched.activityPhoneNumber && errors.activityPhoneNumber
-    );
+    const activityPhoneNumberError = Boolean(errors.activityPhoneNumber);
     return (
       <form onSubmit={handleSubmit} className="form-group mb-0">
         <label className="font-weight-bold" htmlFor="activityName">
@@ -91,7 +79,7 @@ class ActivityForm extends React.PureComponent {
             className="custom-select mr-3"
             id="minRecommendedAge"
           >
-            <option selected>No Min. Age</option>
+            <option defaultValue>No Min. Age</option>
             {this.createOptions()}
           </select>
           <select
@@ -100,7 +88,7 @@ class ActivityForm extends React.PureComponent {
             id="maxRcommendedAge"
             name="maxRcommendedAge"
           >
-            <option selected>No Max. Age</option>
+            <option defaultValue>No Max. Age</option>
             {this.createOptions()}
           </select>
         </div>

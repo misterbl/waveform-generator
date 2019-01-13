@@ -72,6 +72,7 @@ export class Address extends React.Component {
   render() {
     const { addresses, fetchingAddresses } = this.props;
     const { selectedAddress } = this.state;
+    const postcode_regex = /[A-Z]{1,2}[0-9][0-9A-Z]?\s?[0-9][A-Z]{2}/gi;
     return (
       <main className="bg-white form-container px-5 pb-5 pt-4">
         <div className="d-flex justify-content-center">
@@ -128,10 +129,12 @@ export class Address extends React.Component {
         <Formik
           enableReinitialize
           validationSchema={Yup.object().shape({
-            streetNumber: Yup.string().required("Street number requiered"),
-            streetName: Yup.string().required("Street name requiered"),
-            town: Yup.string().required("Town requiered"),
-            postcode: Yup.string().required("Postcode requiered")
+            streetNumber: Yup.string().required("Street number required"),
+            streetName: Yup.string().required("Street name required"),
+            town: Yup.string().required("Town required"),
+            postcode: Yup.string()
+              .required("Postcode required")
+              .matches(postcode_regex, "Postcode not valid")
           })}
           initialValues={{
             buildingUnit: selectedAddress.buildingUnit || "",
@@ -143,7 +146,6 @@ export class Address extends React.Component {
           }}
           onSubmit={data => {
             this.handleSubmit(data);
-            console.log("hello");
           }}
           render={formikProps => (
             <AddressForm

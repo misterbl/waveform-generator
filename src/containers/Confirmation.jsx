@@ -8,13 +8,18 @@ export class Confirmation extends React.Component {
     activityAddress: JSON.parse(localStorage.getItem("activityAddress")),
     activityData: JSON.parse(localStorage.getItem("activityData"))
   };
+
+  pushToPage = route => {
+    this.props.history.push(route);
+  };
+
   onClick = async () => {
     await localStorage.removeItem("activityAddress");
     await localStorage.removeItem("activityData");
-    this.props.history.push(ROUTES.ACTIVITY);
+    this.pushToPage(ROUTES.ACTIVITY);
   };
   backToActivityPage = () => {
-    this.props.history.push(ROUTES.ACTIVITY);
+    this.pushToPage(ROUTES.ACTIVITY);
   };
   render() {
     const {

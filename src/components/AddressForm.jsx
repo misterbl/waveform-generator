@@ -32,21 +32,11 @@ class AddressForm extends React.PureComponent {
   };
 
   render() {
-    const {
-      values,
-      handleSubmit,
-      touched,
-      errors,
-      backToPreviousPage
-    } = this.props;
-    const streetNumberError = Boolean(
-      touched.streetNumber && errors.streetNumber
-    );
-    const streetNameError = Boolean(
-      touched.streetNumber && errors.streetNumber
-    );
-    const townError = Boolean(touched.streetNumber && errors.streetNumber);
-    const postcodeError = Boolean(touched.streetNumber && errors.streetNumber);
+    const { values, handleSubmit, errors, backToPreviousPage } = this.props;
+    const streetNumberError = Boolean(errors.streetNumber);
+    const streetNameError = Boolean(errors.streetName);
+    const townError = Boolean(errors.town);
+    const postcodeError = Boolean(errors.postcode);
     return (
       <form onSubmit={handleSubmit} className="form-group mb-0">
         <label
@@ -176,11 +166,6 @@ class AddressForm extends React.PureComponent {
             }
           >
             Next
-            {/* {isInFlight ? (
-              <Loading size="small" colour="purple" />
-            ) : (
-              <Trans i18nKey="global|button|createyourteam" />
-            )} */}
           </button>
           <button
             type="button"

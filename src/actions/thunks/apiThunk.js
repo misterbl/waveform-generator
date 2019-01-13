@@ -6,7 +6,7 @@ import {
 export const getAddresses = () => async dispatch => {
   try {
     dispatch(fetchingAddresses(true));
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    const proxyurl = "https://cors-anywhere.herokuapp.com/"; // to fix a CORS issue, using a proxy is temporary solution to get the app running
     const url = "http://files.hoop.co.uk/addresses.json";
     const response = await fetch(proxyurl + url);
     if (response && response.status === 404) {

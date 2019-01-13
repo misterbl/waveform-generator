@@ -26,13 +26,15 @@ export class Activity extends React.Component {
 
   render() {
     const { activityData } = this.state;
+
     return (
       <main className="bg-white form-container p-5">
         <h1 className="font-30 text-center mb-5">About your activity</h1>
         <Formik
           validationSchema={Yup.object().shape({
-            activityName: Yup.string().required("Activity name requiered"),
-            activityWebpage: Yup.string().required("Activity webpage requiered")
+            activityName: Yup.string().required("Activity name required"),
+            activityWebpage: Yup.string().required("Activity webpage required"),
+            activityPhoneNumber: Yup.number()
           })}
           initialValues={{
             activityName: activityData ? activityData.activityName : "",
@@ -42,7 +44,7 @@ export class Activity extends React.Component {
             maxRecommendedAge: activityData
               ? activityData.maxRecommendedAge
               : "No Max. Age",
-            activitWebpage: activityData ? activityData.activitWebpage : "",
+            activityWebpage: activityData ? activityData.activityWebpage : "",
             activityPhoneNumber: activityData
               ? activityData.activityPhoneNumber
               : ""
