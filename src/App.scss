@@ -1,0 +1,77 @@
+.form-input-field {
+  display: block;
+  width: 100%;
+  background-color: white;
+  padding: 12px;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+
+  &:focus {
+    outline: none;
+    border-color: #1d67be;
+    color: #262626;
+  }
+
+  &:disabled {
+    color: #cccccc;
+  }
+}
+
+.jg-form-control--error,
+.jg-form-control.has-error {
+  border: 1px solid #f7414b;
+}
+
+.form-container {
+  margin-left: 90px;
+  margin-right: 90px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.button-container {
+  padding-right: 90px;
+}
+
+.back-button {
+  border-color: #ced4da;
+  width: 80px;
+}
+
+.next-button {
+  background-color: #fc621b;
+  color: white;
+  width: 150px;
+}
+
+.copy-activity-button {
+  background-color: #fc621b;
+  color: white;
+  min-width: 80px;
+  font-size: 10px;
+  height: 50px;
+}
+
+.close-modal-button {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 19px;
+}
+
+.title-30 {
+  font-size: 30px;
+}
+body {
+  background-color: #f8f9fa;
+}
+@media (max-width: 576px) {
+  .form-container {
+    margin: 0px;
+  }
+  body {
+    background-color: white !important;
+  }
+}
