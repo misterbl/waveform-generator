@@ -10,13 +10,6 @@ ShallowWrapper {
     handleChange={[Function]}
     handleReset={[Function]}
     handleSubmit={[Function]}
-    initialValues={
-      Object {
-        "teamName": "",
-      }
-    }
-    isError={false}
-    isInFlight={false}
     isSubmitting={false}
     isValid={false}
     isValidating={false}
@@ -95,7 +88,7 @@ ShallowWrapper {
             onChange={[Function]}
           >
             <option
-              selected={true}
+              defaultValue={true}
             >
               No Min. Age
             </option>
@@ -162,7 +155,7 @@ ShallowWrapper {
             onChange={[Function]}
           >
             <option
-              selected={true}
+              defaultValue={true}
             >
               No Max. Age
             </option>
@@ -349,7 +342,7 @@ ShallowWrapper {
               onChange={[Function]}
             >
               <option
-                selected={true}
+                defaultValue={true}
               >
                 No Min. Age
               </option>
@@ -416,7 +409,7 @@ ShallowWrapper {
               onChange={[Function]}
             >
               <option
-                selected={true}
+                defaultValue={true}
               >
                 No Max. Age
               </option>
@@ -489,7 +482,7 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <option
-                  selected={true}
+                  defaultValue={true}
                 >
                   No Min. Age
                 </option>,
@@ -564,7 +557,7 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": "No Min. Age",
-                  "selected": true,
+                  "defaultValue": true,
                 },
                 "ref": null,
                 "rendered": "No Min. Age",
@@ -572,7 +565,7 @@ ShallowWrapper {
               },
               Object {
                 "instance": null,
-                "key": "value",
+                "key": "1 year",
                 "nodeType": "host",
                 "props": Object {
                   "children": "1 year",
@@ -584,7 +577,7 @@ ShallowWrapper {
               },
               Object {
                 "instance": null,
-                "key": "value",
+                "key": "2 years",
                 "nodeType": "host",
                 "props": Object {
                   "children": "2 years",
@@ -596,7 +589,7 @@ ShallowWrapper {
               },
               Object {
                 "instance": null,
-                "key": "value",
+                "key": "3 years",
                 "nodeType": "host",
                 "props": Object {
                   "children": "3 years",
@@ -608,7 +601,7 @@ ShallowWrapper {
               },
               Object {
                 "instance": null,
-                "key": "value",
+                "key": "4 years",
                 "nodeType": "host",
                 "props": Object {
                   "children": "4 years",
@@ -620,7 +613,7 @@ ShallowWrapper {
               },
               Object {
                 "instance": null,
-                "key": "value",
+                "key": "5 years",
                 "nodeType": "host",
                 "props": Object {
                   "children": "5 years",
@@ -632,7 +625,7 @@ ShallowWrapper {
               },
               Object {
                 "instance": null,
-                "key": "value",
+                "key": "6 years",
                 "nodeType": "host",
                 "props": Object {
                   "children": "6 years",
@@ -644,7 +637,7 @@ ShallowWrapper {
               },
               Object {
                 "instance": null,
-                "key": "value",
+                "key": "7 years",
                 "nodeType": "host",
                 "props": Object {
                   "children": "7 years",
@@ -656,7 +649,7 @@ ShallowWrapper {
               },
               Object {
                 "instance": null,
-                "key": "value",
+                "key": "8 years",
                 "nodeType": "host",
                 "props": Object {
                   "children": "8 years",
@@ -668,7 +661,7 @@ ShallowWrapper {
               },
               Object {
                 "instance": null,
-                "key": "value",
+                "key": "9 years",
                 "nodeType": "host",
                 "props": Object {
                   "children": "9 years",
@@ -680,7 +673,7 @@ ShallowWrapper {
               },
               Object {
                 "instance": null,
-                "key": "value",
+                "key": "10 years",
                 "nodeType": "host",
                 "props": Object {
                   "children": "10 years",
@@ -692,7 +685,7 @@ ShallowWrapper {
               },
               Object {
                 "instance": null,
-                "key": "value",
+                "key": "11 years",
                 "nodeType": "host",
                 "props": Object {
                   "children": "11 years",
@@ -712,7 +705,7 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <option
-                  selected={true}
+                  defaultValue={true}
                 >
                   No Max. Age
                 </option>,
@@ -787,7 +780,7 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": "No Max. Age",
-                  "selected": true,
+                  "defaultValue": true,
                 },
                 "ref": null,
                 "rendered": "No Max. Age",
@@ -795,7 +788,7 @@ ShallowWrapper {
               },
               Object {
                 "instance": null,
-                "key": "value",
+                "key": "1 year",
                 "nodeType": "host",
                 "props": Object {
                   "children": "1 year",
@@ -807,7 +800,7 @@ ShallowWrapper {
               },
               Object {
                 "instance": null,
-                "key": "value",
+                "key": "2 years",
                 "nodeType": "host",
                 "props": Object {
                   "children": "2 years",
@@ -819,7 +812,7 @@ ShallowWrapper {
               },
               Object {
                 "instance": null,
-                "key": "value",
+                "key": "3 years",
                 "nodeType": "host",
                 "props": Object {
                   "children": "3 years",
@@ -831,7 +824,7 @@ ShallowWrapper {
               },
               Object {
                 "instance": null,
-                "key": "value",
+                "key": "4 years",
                 "nodeType": "host",
                 "props": Object {
                   "children": "4 years",
@@ -843,7 +836,7 @@ ShallowWrapper {
               },
               Object {
                 "instance": null,
-                "key": "value",
+                "key": "5 years",
                 "nodeType": "host",
                 "props": Object {
                   "children": "5 years",
@@ -855,7 +848,7 @@ ShallowWrapper {
               },
               Object {
                 "instance": null,
-                "key": "value",
+                "key": "6 years",
                 "nodeType": "host",
                 "props": Object {
                   "children": "6 years",
@@ -867,7 +860,7 @@ ShallowWrapper {
               },
               Object {
                 "instance": null,
-                "key": "value",
+                "key": "7 years",
                 "nodeType": "host",
                 "props": Object {
                   "children": "7 years",
@@ -879,7 +872,7 @@ ShallowWrapper {
               },
               Object {
                 "instance": null,
-                "key": "value",
+                "key": "8 years",
                 "nodeType": "host",
                 "props": Object {
                   "children": "8 years",
@@ -891,7 +884,7 @@ ShallowWrapper {
               },
               Object {
                 "instance": null,
-                "key": "value",
+                "key": "9 years",
                 "nodeType": "host",
                 "props": Object {
                   "children": "9 years",
@@ -903,7 +896,7 @@ ShallowWrapper {
               },
               Object {
                 "instance": null,
-                "key": "value",
+                "key": "10 years",
                 "nodeType": "host",
                 "props": Object {
                   "children": "10 years",
@@ -915,7 +908,7 @@ ShallowWrapper {
               },
               Object {
                 "instance": null,
-                "key": "value",
+                "key": "11 years",
                 "nodeType": "host",
                 "props": Object {
                   "children": "11 years",
@@ -1140,7 +1133,7 @@ ShallowWrapper {
               onChange={[Function]}
             >
               <option
-                selected={true}
+                defaultValue={true}
               >
                 No Min. Age
               </option>
@@ -1207,7 +1200,7 @@ ShallowWrapper {
               onChange={[Function]}
             >
               <option
-                selected={true}
+                defaultValue={true}
               >
                 No Max. Age
               </option>
@@ -1394,7 +1387,7 @@ ShallowWrapper {
                 onChange={[Function]}
               >
                 <option
-                  selected={true}
+                  defaultValue={true}
                 >
                   No Min. Age
                 </option>
@@ -1461,7 +1454,7 @@ ShallowWrapper {
                 onChange={[Function]}
               >
                 <option
-                  selected={true}
+                  defaultValue={true}
                 >
                   No Max. Age
                 </option>
@@ -1534,7 +1527,7 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   <option
-                    selected={true}
+                    defaultValue={true}
                   >
                     No Min. Age
                   </option>,
@@ -1609,7 +1602,7 @@ ShallowWrapper {
                   "nodeType": "host",
                   "props": Object {
                     "children": "No Min. Age",
-                    "selected": true,
+                    "defaultValue": true,
                   },
                   "ref": null,
                   "rendered": "No Min. Age",
@@ -1617,7 +1610,7 @@ ShallowWrapper {
                 },
                 Object {
                   "instance": null,
-                  "key": "value",
+                  "key": "1 year",
                   "nodeType": "host",
                   "props": Object {
                     "children": "1 year",
@@ -1629,7 +1622,7 @@ ShallowWrapper {
                 },
                 Object {
                   "instance": null,
-                  "key": "value",
+                  "key": "2 years",
                   "nodeType": "host",
                   "props": Object {
                     "children": "2 years",
@@ -1641,7 +1634,7 @@ ShallowWrapper {
                 },
                 Object {
                   "instance": null,
-                  "key": "value",
+                  "key": "3 years",
                   "nodeType": "host",
                   "props": Object {
                     "children": "3 years",
@@ -1653,7 +1646,7 @@ ShallowWrapper {
                 },
                 Object {
                   "instance": null,
-                  "key": "value",
+                  "key": "4 years",
                   "nodeType": "host",
                   "props": Object {
                     "children": "4 years",
@@ -1665,7 +1658,7 @@ ShallowWrapper {
                 },
                 Object {
                   "instance": null,
-                  "key": "value",
+                  "key": "5 years",
                   "nodeType": "host",
                   "props": Object {
                     "children": "5 years",
@@ -1677,7 +1670,7 @@ ShallowWrapper {
                 },
                 Object {
                   "instance": null,
-                  "key": "value",
+                  "key": "6 years",
                   "nodeType": "host",
                   "props": Object {
                     "children": "6 years",
@@ -1689,7 +1682,7 @@ ShallowWrapper {
                 },
                 Object {
                   "instance": null,
-                  "key": "value",
+                  "key": "7 years",
                   "nodeType": "host",
                   "props": Object {
                     "children": "7 years",
@@ -1701,7 +1694,7 @@ ShallowWrapper {
                 },
                 Object {
                   "instance": null,
-                  "key": "value",
+                  "key": "8 years",
                   "nodeType": "host",
                   "props": Object {
                     "children": "8 years",
@@ -1713,7 +1706,7 @@ ShallowWrapper {
                 },
                 Object {
                   "instance": null,
-                  "key": "value",
+                  "key": "9 years",
                   "nodeType": "host",
                   "props": Object {
                     "children": "9 years",
@@ -1725,7 +1718,7 @@ ShallowWrapper {
                 },
                 Object {
                   "instance": null,
-                  "key": "value",
+                  "key": "10 years",
                   "nodeType": "host",
                   "props": Object {
                     "children": "10 years",
@@ -1737,7 +1730,7 @@ ShallowWrapper {
                 },
                 Object {
                   "instance": null,
-                  "key": "value",
+                  "key": "11 years",
                   "nodeType": "host",
                   "props": Object {
                     "children": "11 years",
@@ -1757,7 +1750,7 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   <option
-                    selected={true}
+                    defaultValue={true}
                   >
                     No Max. Age
                   </option>,
@@ -1832,7 +1825,7 @@ ShallowWrapper {
                   "nodeType": "host",
                   "props": Object {
                     "children": "No Max. Age",
-                    "selected": true,
+                    "defaultValue": true,
                   },
                   "ref": null,
                   "rendered": "No Max. Age",
@@ -1840,7 +1833,7 @@ ShallowWrapper {
                 },
                 Object {
                   "instance": null,
-                  "key": "value",
+                  "key": "1 year",
                   "nodeType": "host",
                   "props": Object {
                     "children": "1 year",
@@ -1852,7 +1845,7 @@ ShallowWrapper {
                 },
                 Object {
                   "instance": null,
-                  "key": "value",
+                  "key": "2 years",
                   "nodeType": "host",
                   "props": Object {
                     "children": "2 years",
@@ -1864,7 +1857,7 @@ ShallowWrapper {
                 },
                 Object {
                   "instance": null,
-                  "key": "value",
+                  "key": "3 years",
                   "nodeType": "host",
                   "props": Object {
                     "children": "3 years",
@@ -1876,7 +1869,7 @@ ShallowWrapper {
                 },
                 Object {
                   "instance": null,
-                  "key": "value",
+                  "key": "4 years",
                   "nodeType": "host",
                   "props": Object {
                     "children": "4 years",
@@ -1888,7 +1881,7 @@ ShallowWrapper {
                 },
                 Object {
                   "instance": null,
-                  "key": "value",
+                  "key": "5 years",
                   "nodeType": "host",
                   "props": Object {
                     "children": "5 years",
@@ -1900,7 +1893,7 @@ ShallowWrapper {
                 },
                 Object {
                   "instance": null,
-                  "key": "value",
+                  "key": "6 years",
                   "nodeType": "host",
                   "props": Object {
                     "children": "6 years",
@@ -1912,7 +1905,7 @@ ShallowWrapper {
                 },
                 Object {
                   "instance": null,
-                  "key": "value",
+                  "key": "7 years",
                   "nodeType": "host",
                   "props": Object {
                     "children": "7 years",
@@ -1924,7 +1917,7 @@ ShallowWrapper {
                 },
                 Object {
                   "instance": null,
-                  "key": "value",
+                  "key": "8 years",
                   "nodeType": "host",
                   "props": Object {
                     "children": "8 years",
@@ -1936,7 +1929,7 @@ ShallowWrapper {
                 },
                 Object {
                   "instance": null,
-                  "key": "value",
+                  "key": "9 years",
                   "nodeType": "host",
                   "props": Object {
                     "children": "9 years",
@@ -1948,7 +1941,7 @@ ShallowWrapper {
                 },
                 Object {
                   "instance": null,
-                  "key": "value",
+                  "key": "10 years",
                   "nodeType": "host",
                   "props": Object {
                     "children": "10 years",
@@ -1960,7 +1953,7 @@ ShallowWrapper {
                 },
                 Object {
                   "instance": null,
-                  "key": "value",
+                  "key": "11 years",
                   "nodeType": "host",
                   "props": Object {
                     "children": "11 years",

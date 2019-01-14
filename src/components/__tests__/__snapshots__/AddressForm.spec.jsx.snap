@@ -10,13 +10,6 @@ ShallowWrapper {
     handleChange={[Function]}
     handleReset={[Function]}
     handleSubmit={[Function]}
-    initialValues={
-      Object {
-        "teamName": "",
-      }
-    }
-    isError={false}
-    isInFlight={false}
     isSubmitting={false}
     isValid={false}
     isValidating={false}

@@ -12,10 +12,7 @@ describe("ActivityForm", () => {
       maxRcommendedAge: "5",
       activityWebpage: "activityWebpage",
       activityPhoneNumber: "activityPhoneNumber"
-    },
-    initialValues: { teamName: "" },
-    isInFlight: false,
-    isError: false
+    }
   };
   const wrapper = shallow(<ActivityForm {...props} />);
   it("matches the snapshot", () => {

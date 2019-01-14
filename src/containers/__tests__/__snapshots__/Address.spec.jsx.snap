@@ -178,6 +178,7 @@ ShallowWrapper {
                   "_deps": Array [],
                   "_exclusive": Object {
                     "required": false,
+                    "undefined": false,
                   },
                   "_mutate": false,
                   "_options": Object {
@@ -191,6 +192,7 @@ ShallowWrapper {
                     "refs": Map {},
                   },
                   "tests": Array [
+                    [Function],
                     [Function],
                     [Function],
                   ],
@@ -479,6 +481,7 @@ ShallowWrapper {
                 "_deps": Array [],
                 "_exclusive": Object {
                   "required": false,
+                  "undefined": false,
                 },
                 "_mutate": false,
                 "_options": Object {
@@ -492,6 +495,7 @@ ShallowWrapper {
                   "refs": Map {},
                 },
                 "tests": Array [
+                  [Function],
                   [Function],
                   [Function],
                 ],
@@ -702,6 +706,7 @@ ShallowWrapper {
                     "_deps": Array [],
                     "_exclusive": Object {
                       "required": false,
+                      "undefined": false,
                     },
                     "_mutate": false,
                     "_options": Object {
@@ -715,6 +720,7 @@ ShallowWrapper {
                       "refs": Map {},
                     },
                     "tests": Array [
+                      [Function],
                       [Function],
                       [Function],
                     ],
@@ -1003,6 +1009,7 @@ ShallowWrapper {
                   "_deps": Array [],
                   "_exclusive": Object {
                     "required": false,
+                    "undefined": false,
                   },
                   "_mutate": false,
                   "_options": Object {
@@ -1016,6 +1023,7 @@ ShallowWrapper {
                     "refs": Map {},
                   },
                   "tests": Array [
+                    [Function],
                     [Function],
                     [Function],
                   ],

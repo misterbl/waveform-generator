@@ -90,9 +90,9 @@ ShallowWrapper {
           enableReinitialize={false}
           initialValues={
             Object {
-              "activitWebpage": "",
               "activityName": "",
               "activityPhoneNumber": "",
+              "activityWebpage": "",
               "maxRecommendedAge": "No Max. Age",
               "minRecommendedAge": "No Min. Age",
             }
@@ -115,6 +115,7 @@ ShallowWrapper {
               "_exclusive": Object {},
               "_mutate": false,
               "_nodes": Array [
+                "activityPhoneNumber",
                 "activityWebpage",
                 "activityName",
               ],
@@ -154,6 +155,30 @@ ShallowWrapper {
                     [Function],
                     [Function],
                   ],
+                  "transforms": Array [
+                    [Function],
+                  ],
+                },
+                "activityPhoneNumber": NumberSchema {
+                  "_blacklist": RefSet {
+                    "list": Set {},
+                    "refs": Map {},
+                  },
+                  "_conditions": Array [],
+                  "_deps": Array [],
+                  "_exclusive": Object {},
+                  "_mutate": false,
+                  "_options": Object {
+                    "abortEarly": true,
+                    "recursive": true,
+                  },
+                  "_type": "number",
+                  "_typeError": [Function],
+                  "_whitelist": RefSet {
+                    "list": Set {},
+                    "refs": Map {},
+                  },
+                  "tests": Array [],
                   "transforms": Array [
                     [Function],
                   ],
@@ -219,9 +244,9 @@ ShallowWrapper {
         "props": Object {
           "enableReinitialize": false,
           "initialValues": Object {
-            "activitWebpage": "",
             "activityName": "",
             "activityPhoneNumber": "",
+            "activityWebpage": "",
             "maxRecommendedAge": "No Max. Age",
             "minRecommendedAge": "No Min. Age",
           },
@@ -242,6 +267,7 @@ ShallowWrapper {
             "_exclusive": Object {},
             "_mutate": false,
             "_nodes": Array [
+              "activityPhoneNumber",
               "activityWebpage",
               "activityName",
             ],
@@ -281,6 +307,30 @@ ShallowWrapper {
                   [Function],
                   [Function],
                 ],
+                "transforms": Array [
+                  [Function],
+                ],
+              },
+              "activityPhoneNumber": NumberSchema {
+                "_blacklist": RefSet {
+                  "list": Set {},
+                  "refs": Map {},
+                },
+                "_conditions": Array [],
+                "_deps": Array [],
+                "_exclusive": Object {},
+                "_mutate": false,
+                "_options": Object {
+                  "abortEarly": true,
+                  "recursive": true,
+                },
+                "_type": "number",
+                "_typeError": [Function],
+                "_whitelist": RefSet {
+                  "list": Set {},
+                  "refs": Map {},
+                },
+                "tests": Array [],
                 "transforms": Array [
                   [Function],
                 ],
@@ -344,9 +394,9 @@ ShallowWrapper {
             enableReinitialize={false}
             initialValues={
               Object {
-                "activitWebpage": "",
                 "activityName": "",
                 "activityPhoneNumber": "",
+                "activityWebpage": "",
                 "maxRecommendedAge": "No Max. Age",
                 "minRecommendedAge": "No Min. Age",
               }
@@ -369,6 +419,7 @@ ShallowWrapper {
                 "_exclusive": Object {},
                 "_mutate": false,
                 "_nodes": Array [
+                  "activityPhoneNumber",
                   "activityWebpage",
                   "activityName",
                 ],
@@ -408,6 +459,30 @@ ShallowWrapper {
                       [Function],
                       [Function],
                     ],
+                    "transforms": Array [
+                      [Function],
+                    ],
+                  },
+                  "activityPhoneNumber": NumberSchema {
+                    "_blacklist": RefSet {
+                      "list": Set {},
+                      "refs": Map {},
+                    },
+                    "_conditions": Array [],
+                    "_deps": Array [],
+                    "_exclusive": Object {},
+                    "_mutate": false,
+                    "_options": Object {
+                      "abortEarly": true,
+                      "recursive": true,
+                    },
+                    "_type": "number",
+                    "_typeError": [Function],
+                    "_whitelist": RefSet {
+                      "list": Set {},
+                      "refs": Map {},
+                    },
+                    "tests": Array [],
                     "transforms": Array [
                       [Function],
                     ],
@@ -473,9 +548,9 @@ ShallowWrapper {
           "props": Object {
             "enableReinitialize": false,
             "initialValues": Object {
-              "activitWebpage": "",
               "activityName": "",
               "activityPhoneNumber": "",
+              "activityWebpage": "",
               "maxRecommendedAge": "No Max. Age",
               "minRecommendedAge": "No Min. Age",
             },
@@ -496,6 +571,7 @@ ShallowWrapper {
               "_exclusive": Object {},
               "_mutate": false,
               "_nodes": Array [
+                "activityPhoneNumber",
                 "activityWebpage",
                 "activityName",
               ],
@@ -535,6 +611,30 @@ ShallowWrapper {
                     [Function],
                     [Function],
                   ],
+                  "transforms": Array [
+                    [Function],
+                  ],
+                },
+                "activityPhoneNumber": NumberSchema {
+                  "_blacklist": RefSet {
+                    "list": Set {},
+                    "refs": Map {},
+                  },
+                  "_conditions": Array [],
+                  "_deps": Array [],
+                  "_exclusive": Object {},
+                  "_mutate": false,
+                  "_options": Object {
+                    "abortEarly": true,
+                    "recursive": true,
+                  },
+                  "_type": "number",
+                  "_typeError": [Function],
+                  "_whitelist": RefSet {
+                    "list": Set {},
+                    "refs": Map {},
+                  },
+                  "tests": Array [],
                   "transforms": Array [
                     [Function],
                   ],

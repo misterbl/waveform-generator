@@ -1,12 +1,16 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import ROUTES from "../const/route";
-import hoopLogo from "../hoop-logo.png";
-
+import hoopLogo from "../assets/hoop-logo.png";
+import {
+  localStorageRemoveItem,
+  localStorageGetItem
+} from "../utils/localStorage";
+import kidsPlaying from "../assets/kids-playing.jpg";
 export class Confirmation extends React.Component {
   state = {
-    activityAddress: JSON.parse(localStorage.getItem("activityAddress")),
-    activityData: JSON.parse(localStorage.getItem("activityData"))
+    activityAddress: localStorageGetItem("activityAddress"),
+    activityData: localStorageGetItem("activityData")
   };
 
   pushToPage = route => {
@@ -14,86 +18,84 @@ export class Confirmation extends React.Component {
   };
 
   onClick = async () => {
-    await localStorage.removeItem("activityAddress");
-    await localStorage.removeItem("activityData");
+    await localStorageRemoveItem("activityAddress");
+    await localStorageRemoveItem("activityData");
     this.pushToPage(ROUTES.ACTIVITY);
   };
   backToActivityPage = () => {
     this.pushToPage(ROUTES.ACTIVITY);
   };
   render() {
-    const {
-      activityAddress: {
-        buildingName,
-        buildingUnit,
-        streetName,
-        streetNumber,
-        town
-      },
-      activityData: {
-        activityWebpage,
-        activityName,
-        activityPhoneNumber,
-        maxRecommendedAge,
-        minRecommendedAge
-      }
-    } = this.state;
-    const address = `${buildingName ? `${buildingName}, ` : ""}${
-      buildingUnit ? `${buildingUnit}, ` : ""
-    }${streetName ? `${streetName}, ` : ""}${
-      streetNumber ? `${streetNumber}, ` : ""
-    }${town ? town : ""}`;
+    if (this.state.activityAddress && this.state.activityData) {
+      const {
+        activityAddress: {
+          buildingName,
+          buildingUnit,
+          streetName,
+          streetNumber,
+          town
+        },
+        activityData: {
+          activityWebpage,
+          activityName,
+          activityPhoneNumber,
+          maxRecommendedAge,
+          minRecommendedAge
+        }
+      } = this.state;
+      const address = `${buildingName ? `${buildingName}, ` : ""}${
+        buildingUnit ? `${buildingUnit}, ` : ""
+      }${streetName ? `${streetName}, ` : ""}${
+        streetNumber ? `${streetNumber}, ` : ""
+      }${town ? town : ""}`;
+      return (
+        <main className="bg-white form-container p-5">
+          <img src={hoopLogo} alt="Hoop's logo" className="w-25" />
+          <h1 className="my-5 text-center">Your activity is registered!</h1>
+          <div className="border">
+            <div className="overflow-hidden mb-3">
+              <img src={kidsPlaying} alt="kids playing" />
+            </div>
+            <p className="px-5 font-weight-bold text-center">{activityName}</p>
+            <p className="px-5 ">{activityWebpage}</p>
+            <p className="px-5 ">
+              <span>{`From ${minRecommendedAge} to ${maxRecommendedAge}`}</span>
+            </p>
+            <p className="px-5 ">{activityPhoneNumber}</p>
+            <p className="px-5 ">{address}</p>
+          </div>
+          <div className="d-flex flex-row-reverse py-5">
+            <button
+              type="button"
+              id="next-button"
+              className="btn next-button ml-3"
+              onClick={this.onClick}
+            >
+              Register another activity
+            </button>
+            <button
+              type="button"
+              id="edit-button"
+              className="btn back-button"
+              onClick={this.backToActivityPage}
+            >
+              Edit
+            </button>
+          </div>
+        </main>
+      );
+    }
     return (
-      <main className="bg-white form-container p-5">
-        <img src={hoopLogo} alt="Hoop's logo" className="w-25" />
-        <h1 className="my-5 text-center">Your activity is registered!</h1>
-        <div className="px-5 text-center">
-          <div className="mt-4 font-20 d-flex border border-danger p-2 rounded bg-light">
-            <span className="font-weight-bold">Name: </span>
-            <span className="ml-3">{activityName}</span>
-          </div>
-
-          <div className="mt-4 font-20 d-flex border border-primary p-2 rounded bg-light">
-            <span className="font-weight-bold">Webpage:</span>{" "}
-            <span className="ml-3">{activityWebpage}</span>
-          </div>
-
-          <div className="mt-4 font-20 d-flex border border-warning p-2 rounded bg-light">
-            <span className="font-weight-bold">Phone number: </span>
-            <span className="ml-3">{activityPhoneNumber}</span>
-          </div>
-          <div className="mt-4 font-20 d-flex border border-info p-2 rounded bg-light">
-            <span className="font-weight-bold">Min. Recommended Age:</span>
-            <span className="ml-3">{minRecommendedAge}</span>
-          </div>
-          <div className="mt-4 font-20 d-flex border  border-danger p-2 rounded bg-light">
-            <span className="font-weight-bold">Max. Recommended Age:</span>
-            <span className="ml-3">{maxRecommendedAge}</span>
-          </div>
-          <div className="mt-4 font-20 d-flex border border-primary p-2 rounded bg-light">
-            <span className="font-weight-bold">Address:</span>
-            <span className="ml-3 text-left">{address}</span>
-          </div>
-        </div>
-        <div className="d-flex flex-row-reverse py-5">
-          <button
-            type="button"
-            id="next-button"
-            className="btn next-button ml-3"
-            onClick={this.onClick}
-          >
-            Register another activity
-          </button>
-          <button
-            type="button"
-            id="edit-button"
-            className="btn back-button"
-            onClick={this.backToActivityPage}
-          >
-            Edit
-          </button>
-        </div>
-      </main>
+      <div className="text-center pt-5 mt-5">
+        <button
+          type="button"
+          id="next-button"
+          className="btn next-button"
+          onClick={this.onClick}
+        >
+          Register an activity
+        </button>
+      </div>
     );
   }
 }

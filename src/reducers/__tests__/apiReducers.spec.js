@@ -14,6 +14,7 @@ describe("apiReducers", () => {
       const action = saveRegisteredAddresses(registeredAddresses);
       expect(apiReducers.activity(registeredAddresses, action)).toEqual({
         "0": {
+          // TODO to be fixed
           buildingName: "London House",
           buildingUnit: "4",
           postcode: "N63GH",

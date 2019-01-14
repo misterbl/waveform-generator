@@ -42,9 +42,7 @@ class ActivityForm extends React.PureComponent {
   render() {
     const { values, handleSubmit, errors, backToPreviousPage } = this.props;
     const activityNameError = Boolean(errors.activityName);
-
     const activityWebpageError = Boolean(errors.activityWebpage);
-
     const activityPhoneNumberError = Boolean(errors.activityPhoneNumber);
     return (
       <form onSubmit={handleSubmit} className="form-group mb-0">

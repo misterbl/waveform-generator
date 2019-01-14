@@ -6,17 +6,20 @@ import * as Yup from "yup";
 import { saveActivityData } from "../actions/actionCreators/apiActions";
 import ActivityForm from "../components/ActivityForm";
 import ROUTES from "../const/route";
-
+import {
+  localStorageSetItem,
+  localStorageGetItem
+} from "../utils/localStorage";
 export class Activity extends React.Component {
   state = {
-    activityData: JSON.parse(localStorage.getItem("activityData"))
+    activityData: localStorageGetItem("activityData")
   };
   handleSubmit = async data => {
     const {
       saveActivityData,
       history: { push }
     } = this.props;
-    await localStorage.setItem("activityData", JSON.stringify(data));
+    await localStorageSetItem("activityData", data);
     await saveActivityData(data);
     push(ROUTES.ADDRESS);
   };

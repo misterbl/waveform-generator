@@ -1,6 +1,6 @@
 # Hoop Activity Form
 
-This app allow a user to register an Activity to be featured on hoop.co.uk
+This app allows users to register an activity to be featured on hoop.co.uk
 
 For data persistency on page refresh, browser local storage is used
 

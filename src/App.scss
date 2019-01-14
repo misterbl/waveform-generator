@@ -1,25 +1,13 @@
-.form-input-field {
-  display: block;
-  width: 100%;
-  background-color: white;
-  padding: 12px;
-  border: 1px solid #cccccc;
-  border-radius: 3px;
-
-  &:focus {
-    outline: none;
-    border-color: #1d67be;
-    color: #262626;
-  }
-
-  &:disabled {
-    color: #cccccc;
-  }
+body {
+  background-color: #f8f9fa;
 }
-
-.jg-form-control--error,
-.jg-form-control.has-error {
-  border: 1px solid #f7414b;
+@media (max-width: 576px) {
+  .form-container {
+    margin: 0px;
+  }
+  body {
+    background-color: white !important;
+  }
 }
 
 .form-container {
@@ -67,15 +55,4 @@
 
 .font-20 {
   font-size: 20px;
-}
-body {
-  background-color: #f8f9fa;
-}
-@media (max-width: 576px) {
-  .form-container {
-    margin: 0px;
-  }
-  body {
-    background-color: white !important;
-  }
 }

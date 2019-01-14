@@ -13,10 +13,7 @@ describe("AddressForm", () => {
       streetName: "streetName",
       town: "town",
       postcode: "postcode"
-    },
-    initialValues: { teamName: "" },
-    isInFlight: false,
-    isError: false
+    }
   };
   const wrapper = shallow(<AddressForm {...props} />);
   it("matches the snapshot", () => {

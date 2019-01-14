@@ -1,12 +1,13 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import ROUTES from "../const/route";
-import hoopLogo from "../hoop-logo.png";
+import hoopLogo from "../assets/hoop-logo.png";
+import { localStorageRemoveItem } from "../utils/localStorage";
 
 export class Home extends React.Component {
   onClick = () => {
-    localStorage.removeItem("activityAddress");
-    localStorage.removeItem("activityData");
+    localStorageRemoveItem("activityAddress");
+    localStorageRemoveItem("activityData");
     this.props.history.push(ROUTES.ACTIVITY);
   };
 

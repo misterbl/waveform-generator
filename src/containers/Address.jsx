@@ -13,10 +13,13 @@ import {
 } from "../selectors/apiSelectors";
 import { saveActivityAddress } from "../actions/actionCreators/apiActions";
 import ROUTES from "../const/route";
-import hoopLogo from "../hoop-logo.png";
-
+import hoopLogo from "../assets/hoop-logo.png";
+import {
+  localStorageSetItem,
+  localStorageGetItem
+} from "../utils/localStorage";
 export class Address extends React.Component {
-  activityAddress = JSON.parse(localStorage.getItem("activityAddress"));
+  activityAddress = localStorageGetItem("activityAddress");
   state = {
     modalIsOpen: false,
     selectedAddress: {
@@ -48,7 +51,7 @@ export class Address extends React.Component {
       saveActivityAddress,
       history: { push }
     } = this.props;
-    await localStorage.setItem("activityAddress", JSON.stringify(data));
+    await localStorageSetItem("activityAddress", data);
     await saveActivityAddress(data);
     push(ROUTES.CONFIRMATION);
   };
@@ -137,12 +140,12 @@ export class Address extends React.Component {
               .matches(postcode_regex, "Postcode not valid")
           })}
           initialValues={{
-            buildingUnit: selectedAddress.buildingUnit || "",
-            buildingName: selectedAddress.buildingName || "",
-            streetNumber: selectedAddress.streetNumber || "",
-            streetName: selectedAddress.streetName || "",
-            town: selectedAddress.town || "",
-            postcode: selectedAddress.postcode || ""
+            buildingUnit: selectedAddress.buildingUnit,
+            buildingName: selectedAddress.buildingName,
+            streetNumber: selectedAddress.streetNumber,
+            streetName: selectedAddress.streetName,
+            town: selectedAddress.town,
+            postcode: selectedAddress.postcode
           }}
           onSubmit={data => {
             this.handleSubmit(data);
