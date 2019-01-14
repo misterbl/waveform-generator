@@ -88,16 +88,7 @@ export class Address extends React.Component {
             className="btn copy-activity-button ml-3"
             onClick={this.onClick}
           >
-            {fetchingAddresses ? (
-              <ClipLoader
-                sizeUnit={"px"}
-                size={30}
-                color={"#123abc"}
-                loading={true}
-              />
-            ) : (
-              "Copy from Existing Activity"
-            )}
+            Copy from Existing Activity
           </button>
           <Modal
             appElement={document.getElementById("root")}
@@ -129,6 +120,16 @@ export class Address extends React.Component {
             )}
           </Modal>
         </div>
+        {fetchingAddresses && (
+          <div className="text-center">
+            <ClipLoader
+              sizeUnit={"px"}
+              size={30}
+              color={"#123abc"}
+              loading={true}
+            />
+          </div>
+        )}
         <Formik
           enableReinitialize
           validationSchema={Yup.object().shape({

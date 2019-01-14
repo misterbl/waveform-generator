@@ -123,6 +123,7 @@ ShallowWrapper {
             </button>
           </Modal>
         </div>,
+        undefined,
         <Formik
           enableReinitialize={true}
           initialValues={
@@ -425,6 +426,7 @@ ShallowWrapper {
         ],
         "type": "div",
       },
+      undefined,
       Object {
         "instance": null,
         "key": undefined,
@@ -651,6 +653,7 @@ ShallowWrapper {
               </button>
             </Modal>
           </div>,
+          undefined,
           <Formik
             enableReinitialize={true}
             initialValues={
@@ -953,6 +956,7 @@ ShallowWrapper {
           ],
           "type": "div",
         },
+        undefined,
         Object {
           "instance": null,
           "key": undefined,
