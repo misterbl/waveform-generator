@@ -1,58 +1,11 @@
-body {
-  background-color: #f8f9fa;
-}
-@media (max-width: 576px) {
-  .form-container {
-    margin: 0px;
-  }
-  body {
-    background-color: white !important;
-  }
+.papercupLogo {
+  width: 100px;
+  height: 60px;
 }
 
-.form-container {
-  margin-left: 90px;
-  margin-right: 90px;
-  margin-top: 50px;
-  margin-bottom: 50px;
+.papercupOrange {
+  color: #eb7907;
 }
-
-.button-container {
-  padding-right: 90px;
-}
-
-.back-button {
-  border-color: #ced4da;
-  width: 80px;
-}
-
-.next-button {
-  background-color: #fc621b;
-  color: white;
-  width: 150px;
-}
-
-.copy-activity-button {
-  background-color: #fc621b;
-  color: white;
-  min-width: 80px;
-  font-size: 10px;
-  height: 50px;
-}
-
-.close-modal-button {
-  background-color: transparent;
-  border: none;
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  font-size: 19px;
-}
-
-.font-30 {
-  font-size: 30px;
-}
-
 .font-20 {
   font-size: 20px;
 }

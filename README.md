@@ -1,8 +1,6 @@
-# Hoop Activity Form
+# Papercup Waveform display platform
 
-This app allows users to register an activity to be featured on hoop.co.uk
-
-For data persistency on page refresh, browser local storage is used
+This app allows users to listen to audio data and to to display the waveform of a given piece of audio.
 
 ## Getting Started
 

@@ -1,23 +1,19 @@
 import React from "react";
 import Peaks from "peaks.js";
 import * as audioFiles from "./assets/audio_files";
-
-export class Home extends React.Component {
+import papercupLogo from "./assets/papercup-logo.png";
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       selectedAudioFile: null
     };
   }
-
-  onAudioFileSelect = async event => {
-    await this.setState({
-      selectedAudioFile: JSON.parse(event.target.value)
-    });
+  createPeaks = () => {
     const {
       selectedAudioFile: { dat, json }
     } = this.state;
-    const p = Peaks.init({
+    Peaks.init({
       mediaElement: document.querySelector("audio"),
       container: document.querySelector("#peaks-container"),
       dataUri: {
@@ -25,9 +21,13 @@ export class Home extends React.Component {
         json: json
       }
     });
-    p.on("peaks.ready", () => {
-      console.log("peak is ready");
+  };
+
+  onAudioFileSelect = async event => {
+    await this.setState({
+      selectedAudioFile: JSON.parse(event.target.value)
     });
+    this.createPeaks();
     this.refs.audio.load();
   };
 
@@ -43,10 +43,20 @@ export class Home extends React.Component {
       sample2Ogg
     } = audioFiles;
     return (
-      <main className="bg-white form-container p-5">
+      <main>
+        <header className="bg-white border-bottom d-flex">
+          <img
+            className="papercupLogo"
+            src={papercupLogo}
+            alt="papercup logo"
+          />
+          <span className="ml-5 pl-5 pt-3 font-20 text-secondary font-weight-bold">
+            Waveform display platform
+          </span>
+        </header>
         <div className="text-center ">
-          <div id="peaks-container" />
-          <div className="mt-5">
+          <h1 className="mt-5 papercupOrange">Select a sample to play</h1>
+          <div className="mt-5 w-75 ml-5">
             <select
               onChange={this.onAudioFileSelect}
               name="selectAddress"
@@ -63,7 +73,7 @@ export class Home extends React.Component {
                   ogg: sample1Ogg
                 })}
               >
-                sample1
+                Sample1
               </option>
               <option
                 key="sample2"
@@ -74,12 +84,13 @@ export class Home extends React.Component {
                   ogg: sample2Ogg
                 })}
               >
-                sample2
+                Sample2
               </option>
             </select>
           </div>
+
           {this.state.selectedAudioFile && (
-            <audio key="audioElement" ref="audio" controls>
+            <audio key="audioElement" ref="audio" className="my-5" controls>
               <source
                 src={this.state.selectedAudioFile.mp3}
                 type="audio/mpeg"
@@ -87,10 +98,11 @@ export class Home extends React.Component {
               <source src={this.state.selectedAudioFile.ogg} type="audio/ogg" />
             </audio>
           )}
+          <div id="peaks-container" className="mb-5" />
         </div>
       </main>
     );
   }
 }
 
-export default Home;
+export default App;
