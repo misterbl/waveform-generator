@@ -7,13 +7,21 @@ import * as sample2Json from "./sample2.json";
 import * as sample2Mp3 from "./sample2.mp3";
 import * as sample2Ogg from "./sample2.ogg";
 
-export {
-  sample1Dat,
-  sample1Json,
-  sample1Mp3,
-  sample1Ogg,
-  sample2Dat,
-  sample2Json,
-  sample2Mp3,
-  sample2Ogg
-};
+const audioFiles = [
+  {
+    name: "sample1",
+    dat: sample1Dat,
+    json: sample1Json,
+    mp3: sample1Mp3,
+    ogg: sample1Ogg
+  },
+  {
+    name: "sample2",
+    dat: sample2Dat,
+    json: sample2Json,
+    mp3: sample2Mp3,
+    ogg: sample2Ogg
+  }
+];
+
+export default audioFiles

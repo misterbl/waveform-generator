@@ -1,6 +1,6 @@
 import React from "react";
 import Peaks from "peaks.js";
-import * as audioFiles from "./assets/audio_files";
+import audioFiles from "./assets/audio_files";
 import papercupLogo from "./assets/papercup-logo.png";
 class App extends React.Component {
   constructor(props) {
@@ -9,6 +9,7 @@ class App extends React.Component {
       selectedAudioFile: null
     };
   }
+
   createPeaks = () => {
     const {
       selectedAudioFile: { dat, json }
@@ -24,24 +25,21 @@ class App extends React.Component {
   };
 
   onAudioFileSelect = async event => {
+    const value = JSON.parse(event.target.value)
     await this.setState({
-      selectedAudioFile: JSON.parse(event.target.value)
+      selectedAudioFile: {
+        mp3: value.mp3,
+        dat: value.dat,
+        json: value.json,
+        ogg: value.ogg
+      }
     });
     this.createPeaks();
     this.refs.audio.load();
   };
 
+
   render() {
-    const {
-      sample1Dat,
-      sample1Json,
-      sample1Mp3,
-      sample1Ogg,
-      sample2Dat,
-      sample2Json,
-      sample2Mp3,
-      sample2Ogg
-    } = audioFiles;
     return (
       <main>
         <header className="bg-white border-bottom d-flex">
@@ -59,36 +57,22 @@ class App extends React.Component {
           <div className="mt-5 w-75 ml-5">
             <select
               onChange={this.onAudioFileSelect}
-              name="selectAddress"
+              name="selectAudioFile"
               className="custom-select"
-              id="selectAddress"
+              id="selectAudioFile"
             >
-              <option selected>Select an audio file></option>
-              <option
-                key="sample1"
-                value={JSON.stringify({
-                  mp3: sample1Mp3,
-                  dat: sample1Dat,
-                  json: sample1Json,
-                  ogg: sample1Ogg
-                })}
-              >
-                Sample1
-              </option>
-              <option
-                key="sample2"
-                value={JSON.stringify({
-                  mp3: sample2Mp3,
-                  dat: sample2Dat,
-                  json: sample2Json,
-                  ogg: sample2Ogg
-                })}
-              >
-                Sample2
-              </option>
+              <option key="select" selected>Select an audio file></option>
+              {audioFiles.map(file => (
+                <option
+                  key={file.name}
+                  value={JSON.stringify(file)}
+                >
+                  {file.name}
+                </option>
+              )
+              )}
             </select>
           </div>
-
           {this.state.selectedAudioFile && (
             <audio key="audioElement" ref="audio" className="my-5" controls>
               <source
