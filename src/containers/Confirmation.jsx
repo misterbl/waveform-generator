@@ -9,7 +9,7 @@ import {
 import kidsPlaying from "../assets/kids-playing.jpg";
 export class Confirmation extends React.Component {
   state = {
-    activityAddress: localStorageGetItem("activityAddress"),
+    activityAddress: localStorageGetItem("activityAddress"), //TODO set the state to this in ComponentWillMount if getActivityData and getActivityAddress return null(
     activityData: localStorageGetItem("activityData")
   };
 

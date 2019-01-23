@@ -1,5 +1,5 @@
 import React from "react";
-
+//TODO all hardcoded test could be move to react intl
 class ActivityForm extends React.PureComponent {
   createOptions = () => {
     let options = [];
@@ -15,6 +15,7 @@ class ActivityForm extends React.PureComponent {
     return options;
   };
   onActivityNameChange = event => {
+    // didn't create a general function for all the onChange for not having to call them in the form with an argument
     const { setFieldValue } = this.props;
     setFieldValue("activityName", event.target.value);
   };
@@ -41,9 +42,9 @@ class ActivityForm extends React.PureComponent {
 
   render() {
     const { values, handleSubmit, errors, backToPreviousPage } = this.props;
-    const activityNameError = Boolean(errors.activityName);
-    const activityWebpageError = Boolean(errors.activityWebpage);
-    const activityPhoneNumberError = Boolean(errors.activityPhoneNumber);
+    const activityNameError = Boolean(errors.activityName); // TODO Boolean wouldn't be necessary here anynmore
+    const activityWebpageError = Boolean(errors.activityWebpage); // TODO Boolean wouldn't be necessary here anynmore
+    const activityPhoneNumberError = Boolean(errors.activityPhoneNumber); // TODO Boolean wouldn't be necessary here anynmore
     return (
       <form onSubmit={handleSubmit} className="form-group mb-0">
         <label className="font-weight-bold" htmlFor="activityName">

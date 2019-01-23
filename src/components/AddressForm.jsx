@@ -2,6 +2,7 @@ import React from "react";
 
 class AddressForm extends React.PureComponent {
   onBuildingUnitChange = event => {
+    // didn't create a general function for all the onChange for not having to call them in the form with an argument
     const { setFieldValue } = this.props;
     setFieldValue("buildingUnit", event.target.value);
   };
@@ -33,10 +34,10 @@ class AddressForm extends React.PureComponent {
 
   render() {
     const { values, handleSubmit, errors, backToPreviousPage } = this.props;
-    const streetNumberError = Boolean(errors.streetNumber);
-    const streetNameError = Boolean(errors.streetName);
-    const townError = Boolean(errors.town);
-    const postcodeError = Boolean(errors.postcode);
+    const streetNumberError = Boolean(errors.streetNumber); // TODO Boolean wouldn't be necessary here anynmore
+    const streetNameError = Boolean(errors.streetName); // TODO Boolean wouldn't be necessary here anynmore
+    const townError = Boolean(errors.town); // TODO Boolean wouldn't be necessary here anynmore
+    const postcodeError = Boolean(errors.postcode); // TODO Boolean wouldn't be necessary here anynmore
     return (
       <form onSubmit={handleSubmit} className="form-group mb-0">
         <label

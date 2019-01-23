@@ -19,7 +19,7 @@ import {
   localStorageGetItem
 } from "../utils/localStorage";
 export class Address extends React.Component {
-  activityAddress = localStorageGetItem("activityAddress");
+  activityAddress = localStorageGetItem("activityAddress"); //TODO set the state to this in ComponentWillMount if getActivityAddress returns null(create the getActivityAddress too)
   state = {
     modalIsOpen: false,
     selectedAddress: {

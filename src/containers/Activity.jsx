@@ -12,7 +12,7 @@ import {
 } from "../utils/localStorage";
 export class Activity extends React.Component {
   state = {
-    activityData: localStorageGetItem("activityData")
+    activityData: localStorageGetItem("activityData") //TODO set the state to this in ComponentWillMount if getActivityData returns null(create the getActivityData too)
   };
   handleSubmit = async data => {
     const {
